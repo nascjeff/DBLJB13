@@ -1,0 +1,108 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 11/08/2023 às 12:02
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `dblavab13`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `funcionários`
+--
+
+CREATE TABLE `funcionários` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `dtcad` date NOT NULL,
+  `celular` varchar(20) NOT NULL,
+  `e-mail` varchar(100) NOT NULL,
+  `salário` double(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `funcionários`
+--
+
+INSERT INTO `funcionários` (`id`, `nome`, `dtcad`, `celular`, `e-mail`, `salário`) VALUES
+(1, 'Carlos Henrique Dias Queiroz', '2023-06-07', '(21) 9411-5628', '?', 1400.00),
+(2, 'Jefferson Nascimento Júnior', '2023-06-07', '(21) 97714-5237', 'iamjefjr96@gmail.com', 1400.00),
+(3, 'Carlos Roberto Feu', '2023-06-07', '(21) 96643-1645', '-', 1400.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `produção diária`
+--
+
+CREATE TABLE `produção diária` (
+  `id` int(11) NOT NULL,
+  `data` date NOT NULL,
+  `carros` int(1) NOT NULL,
+  `motos` int(1) NOT NULL,
+  `vans` int(1) NOT NULL,
+  `entradas` double(10,2) NOT NULL,
+  `despesas` double(10,2) NOT NULL,
+  `saldo dia` double(10,2) NOT NULL,
+  `saldo atual` double(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produção diária`
+--
+
+INSERT INTO `produção diária` (`id`, `data`, `carros`, `motos`, `vans`, `entradas`, `despesas`, `saldo dia`, `saldo atual`) VALUES
+(1, '2023-08-10', 3, 1, 0, 67.00, 0.00, 67.00, 67.00);
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `funcionários`
+--
+ALTER TABLE `funcionários`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `produção diária`
+--
+ALTER TABLE `produção diária`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `funcionários`
+--
+ALTER TABLE `funcionários`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `produção diária`
+--
+ALTER TABLE `produção diária`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
