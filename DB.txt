@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/08/2023 às 12:02
+-- Tempo de geração: 12/08/2023 às 10:56
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -68,7 +68,8 @@ CREATE TABLE `produção diária` (
 --
 
 INSERT INTO `produção diária` (`id`, `data`, `carros`, `motos`, `vans`, `entradas`, `despesas`, `saldo dia`, `saldo atual`) VALUES
-(1, '2023-08-10', 3, 1, 0, 67.00, 0.00, 67.00, 67.00);
+(1, '2023-08-10', 3, 1, 0, 67.00, 0.00, 67.00, 67.00),
+(2, '2023-08-11', 8, 1, 0, 150.00, 15.00, 135.00, 202.00);
 
 --
 -- Índices para tabelas despejadas
@@ -100,7 +101,7 @@ ALTER TABLE `funcionários`
 -- AUTO_INCREMENT de tabela `produção diária`
 --
 ALTER TABLE `produção diária`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
